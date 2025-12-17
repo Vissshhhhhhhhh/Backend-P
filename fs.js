@@ -27,3 +27,6 @@ const readstream = fs.createReadStream('./data/file.txt',{encoding : 'utf8'});
 readstream.on('data',(buffer)=>{
     console.log(buffer);
 })
+
+const writestream = fs.createWriteStream('./data/copy.txt');
+readstream.pipe(writestream);       // pipe copies directly from readstream to writestream file
